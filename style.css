@@ -101,7 +101,7 @@ body{
 }
 
 .checkbox-group {
-    grid-column: 1 / -1;  /* Span across both columns */
+    grid-column: span 2; /* Span across both columns */
     display: flex;
     flex-direction: column;
     gap: 10px;
