@@ -24,30 +24,20 @@ function registration(event) {
         case !email:
             alert('Please enter your email');
             return;
+        case !password:
+            alert('Please enter your password');
+            return;
+        case !confirmPassword:
+            alert('Please confirm your password');
+            return;
+        case !termsCheckbox:
+            alert('Please accept the terms and conditions');
+            return;
         default:
             break;
     }
 
-    //User data to be stored in form of an object
-    const registerData = {
-        firstname: fname,
-        lastname: lname,
-        phone: phone,
-        email: email,
-        password: password,
-        confirmPassword: confirmPassword,
-        emailCheckbox: emailCheckbox,
-        termsCheckbox: termsCheckbox,
-    }
-
-    // Check password matching before saving
-    if (!checkPasswordMatch()) {
-        return; // Stop form submission if passwords don't match
-    }
-
-    //Save data in local storage
-    localStorage.setItem('registerData', JSON.stringify(registerData));
-    alert("Registration successful! Check console for saved data.");
+    alert(`Registration successful! Thank you ${fname} ${lname} for registering with us.`);
     
      // Clear form after successful registration
     document.querySelector('form').reset();
@@ -80,28 +70,6 @@ function checkPasswordMatch() {
         messageElement.textContent = 'Passwords do not match';
         confirmField.style.border = '2px solid red';
         return false;
-    }
-}
-
-// Function to retrieve data from localStorage (manually triggered)
-function getUserData() {
-    const userData = localStorage.getItem('registerData');
-    if (userData) {
-        return JSON.parse(userData);
-    }
-    return null;
-}
-
-// Function to clear stored data (manually triggered)
-function clearUserData() {
-    localStorage.removeItem('registerData');
-    console.log("User data cleared from localStorage");
-
-    const check = localStorage.getItem('registerData');
-    if (!check) {
-        console.log("✅ Data successfully cleared");
-    } else {
-        console.log("❌ Data still exists");
     }
 }
 
