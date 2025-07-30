@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Promotions</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <div class="side-image">
+        <img src="promos.jpg" alt="Promotions Image" />
+      </div>
+      <div class="form-container">
+        <div class="content">
+          <h1>Don't hide!</h1>
+          <p class="details">
+            Sign up now to receive exclusive offers and promotions.
+          </p>
+          <p class="details">
+            In order to receive the best deals that are customized to your
+            tastes.
+          </p>
+          <p class="link">
+            Already have an account? <a href="#">Log In</a>
+          </p>
+        </div>
+
+        <form class="form-div">
+        <div class="form-content">
+          <div class="form-group">
+            <label>First Name</label>
+            <input type="text" id="firstname" placeholder="Enter your firstname" />
+          </div>
+          <div class="form-group">
+            <label>Last Name</label>
+            <input type="text" id="lastname" placeholder="Enter your lastname" />
+          </div>
+
+          <div class="form-group">
+            <label>Phone</label>
+            <input
+              type="text"
+              id="phone"
+              maxlength="10"
+              pattern="[0-9]{10}"
+              placeholder="Enter your phone number"
+            />
+          </div>
+          <div class="form-group">
+            <label>Email Id</label>
+            <input type="email" id="emailid" placeholder="Enter your email" />
+          </div>
+
+          <div class="form-group">
+            <label>Password</label>
+            <input type="password" id="password" placeholder="Enter your password" required />
+          </div>
+          <div class="form-group">
+            <label>Confirm Password</label>
+            <input
+              type="password"
+              id="confirm-password"
+              onkeyup="checkPasswordMatch()"
+              placeholder="Enter your confirm password"
+              required
+            />
+              <span id="password-message" style="font-size: 12px; margin-top: 5px; display: none;"></span>
+          </div>
+
+          <div class="checkbox-group">
+            <div class="checkbox-item">
+              <input type="checkbox" id="emails" name="checks"/>
+              <label for="emails">Yes, I want to receive emails</label>
+            </div>
+            <div class="checkbox-item">
+              <input type="checkbox" id="terms" name="checks"/>
+              <label for="terms"
+                >I agree to the <a href="#">Terms and Conditions</a></label
+              >
+            </div>
+          </div>
+          <button type="submit" onclick="registration(event)" class="signup-btn">Sign Up</button>
+          </form>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>
